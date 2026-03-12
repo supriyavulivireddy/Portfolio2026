@@ -6,7 +6,7 @@
 <title>CashFlo — AP Automation Case Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Sometype+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Homemade+Apple&family=Sometype+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -19,7 +19,41 @@ body {
 }
 
 img { display: block; max-width: 100%; }
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+nav.transparent { background: transparent; backdrop-filter: none; box-shadow: none; }
+nav.scrolled { background: rgba(255,255,255,0.75); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
 
+.nav-inner {
+  max-width: 1512px; margin: 0 auto;
+  padding: clamp(14px,1.8vw,22px) clamp(20px,3.5vw,40px);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.nav-logo { font-family: "Homemade Apple", cursive; font-size: clamp(16px,1.6vw,22px); color: #394051; text-decoration: none; }
+
+.nav-links { display: flex; gap: clamp(16px,2.5vw,36px); list-style: none; align-items: center; }
+
+.nav-links a {
+  font-size: clamp(13px,1.1vw,15px);
+  font-weight: 500; color: #394051; text-decoration: none; letter-spacing: 0.02em;
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-links a:hover { color: #111; transform: translateY(-3px); }
+
+.nav-links .cta a {
+  background: #242424; color: #fff;
+  padding: 8px 18px; border-radius: 100px;
+  font-size: clamp(12px,1vw,14px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.nav-links .cta a:hover { background: #394051; color: #fff; transform: translateY(-3px); }
 /* ── HERO ── */
 .hero {
   background: #f3faff;
@@ -1700,6 +1734,17 @@ video:hover, iframe:hover {
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="transparent" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Supriya</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">All Work</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Resume</a></li>
+      <li class="cta"><a href="#">Let's talk</a></li>
+    </ul>
+  </div>
+</nav>
 <div id="read-progress" style="position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#5d97c1,#9b358f);z-index:9999;transition:width 0.08s linear;pointer-events:none;"></div>
 
 <!-- ── HERO ── -->
@@ -2419,6 +2464,17 @@ video:hover, iframe:hover {
     if (e.key === 'Escape') lb.click();
   });
 })();
+  // ── NAV SCROLL ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    navbar.classList.remove('transparent');
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+    navbar.classList.add('transparent');
+  }
+});
 </script>
 </body>
 </html>
