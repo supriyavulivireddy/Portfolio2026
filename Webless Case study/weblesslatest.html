@@ -1929,12 +1929,16 @@
 
     .ncg-item {
       position: relative;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 2px solid #000;
-      background: #e8e8e8;
+      border: 1px solid rgba(226,233,255,0.99);
+      background: #f0f0f0;
+      box-shadow: 0px 0px 15.4px 0px rgba(51,77,165,0.1);
     }
-    .ncg-shipped { border-color: #0034b3; border-width: 2.5px; }
+    .ncg-shipped {
+      border-color: rgba(0,52,179,0.25);
+      box-shadow: 0px 0px 20px 0px rgba(0,52,179,0.15);
+    }
 
     .ncg-item video,
     .ncg-item img {
@@ -1950,7 +1954,7 @@
       font-size: 14px;
       color: #000;
       background: #fff;
-      border-top: 1px solid rgba(0,0,0,0.08);
+      border-top: 1px solid rgba(226,233,255,0.99);
     }
 
     .ncg-badge {
@@ -2167,6 +2171,7 @@
 
       <div class="nd-concept-grid">
 
+        <!-- Row 1: video | image -->
         <div class="ncg-item">
           <video autoplay muted loop playsinline>
             <source src="Search_explorations/Search_exp_1_.mov" type="video/mp4">
@@ -2174,6 +2179,12 @@
           <p class="ncg-label">Concept 01</p>
         </div>
 
+        <div class="ncg-item">
+          <img src="Search_explorations/Search_exp_3.png" alt="Concept 03">
+          <p class="ncg-label">Concept 03</p>
+        </div>
+
+        <!-- Row 2: video (shipped) | image -->
         <div class="ncg-item ncg-shipped">
           <video autoplay muted loop playsinline>
             <source src="Search_explorations/Search_exp_2.mov" type="video/mp4">
@@ -2183,15 +2194,11 @@
         </div>
 
         <div class="ncg-item">
-          <img src="Search_explorations/Search_exp_3.png" alt="Concept 03">
-          <p class="ncg-label">Concept 03</p>
-        </div>
-
-        <div class="ncg-item">
           <img src="Search_explorations/Search_exp_4.png" alt="Concept 04">
           <p class="ncg-label">Concept 04</p>
         </div>
 
+        <!-- Row 3: video | video -->
         <div class="ncg-item">
           <video autoplay muted loop playsinline>
             <source src="Search_explorations/Search_exp_5.mov" type="video/mp4">
