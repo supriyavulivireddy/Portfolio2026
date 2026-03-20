@@ -1940,11 +1940,19 @@
       box-shadow: 0px 0px 20px 0px rgba(0,52,179,0.15);
     }
 
-    .ncg-item video,
-    .ncg-item img {
+    /* Force uniform 16:9 media area on every card */
+    .ncg-item .ncg-media {
       display: block;
       width: 100%;
-      height: auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .ncg-item .ncg-media video,
+    .ncg-item .ncg-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .ncg-label {
@@ -2173,43 +2181,55 @@
 
         <!-- Row 1: video | image -->
         <div class="ncg-item">
-          <video autoplay muted loop playsinline>
-            <source src="Search_explorations/Search_exp_1_.mov" type="video/mp4">
-          </video>
+          <div class="ncg-media">
+            <video autoplay muted loop playsinline>
+              <source src="Search_explorations/Search_exp_1_.mov" type="video/mp4">
+            </video>
+          </div>
           <p class="ncg-label">Concept 01</p>
         </div>
 
         <div class="ncg-item">
-          <img src="Search_explorations/Search_exp_3.png" alt="Concept 03">
+          <div class="ncg-media">
+            <img src="Search_explorations/Search_exp_3.png" alt="Concept 03">
+          </div>
           <p class="ncg-label">Concept 03</p>
         </div>
 
         <!-- Row 2: video (shipped) | image -->
         <div class="ncg-item ncg-shipped">
-          <video autoplay muted loop playsinline>
-            <source src="Search_explorations/Search_exp_2.mov" type="video/mp4">
-          </video>
+          <div class="ncg-media">
+            <video autoplay muted loop playsinline>
+              <source src="Search_explorations/Search_exp_2.mov" type="video/mp4">
+            </video>
+          </div>
           <span class="ncg-badge">Shipped</span>
           <p class="ncg-label">Concept 02</p>
         </div>
 
         <div class="ncg-item">
-          <img src="Search_explorations/Search_exp_4.png" alt="Concept 04">
+          <div class="ncg-media">
+            <img src="Search_explorations/Search_exp_4.png" alt="Concept 04">
+          </div>
           <p class="ncg-label">Concept 04</p>
         </div>
 
         <!-- Row 3: video | video -->
         <div class="ncg-item">
-          <video autoplay muted loop playsinline>
-            <source src="Search_explorations/Search_exp_5.mov" type="video/mp4">
-          </video>
+          <div class="ncg-media">
+            <video autoplay muted loop playsinline>
+              <source src="Search_explorations/Search_exp_5.mov" type="video/mp4">
+            </video>
+          </div>
           <p class="ncg-label">Concept 05</p>
         </div>
 
         <div class="ncg-item">
-          <video autoplay muted loop playsinline>
-            <source src="Search_explorations/Search_exp_6.mov" type="video/mp4">
-          </video>
+          <div class="ncg-media">
+            <video autoplay muted loop playsinline>
+              <source src="Search_explorations/Search_exp_6.mov" type="video/mp4">
+            </video>
+          </div>
           <p class="ncg-label">Concept 06</p>
         </div>
 
