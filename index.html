@@ -408,6 +408,7 @@
       }
       .read-btn:hover { background: #242424; color: #fff; }
       footer p { white-space: normal !important; line-height: 1.6; font-size: 13px; }
+      .nav-links a.disabled { opacity: 0.35; pointer-events: none; cursor: default; }
     }
   </style>
 </head>
@@ -430,13 +431,13 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#" onclick="closeMobileMenu()">All Work</a></li>
-      <li><a href="#" onclick="closeMobileMenu()">About</a></li>
-      <li><a href="#" onclick="closeMobileMenu()">Resume</a></li>
+      <li><a href="#" class="disabled" onclick="closeMobileMenu()">All Work</a></li>
+<li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+<li><a href="RESUME.pdf" target="_blank" onclick="closeMobileMenu()">Resume</a></li>
     </ul>
   </div>
 
-  <a href="#" class="floating-cta">Let's talk ☕</a>
+<a href="mailto:supriyavulivireddy@gmail.com" class="floating-cta">Let's talk 👋</a>
 
   <section class="hero" id="hero">
     <div class="blob blob-1"></div>
