@@ -1470,10 +1470,10 @@ body {
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">Supriya</a>
     <ul class="nav-links">
-      <li><a href="../index.html">All Work</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Resume</a></li>
-      <li class="cta"><a href="#">Let's talk</a></li>
+      <li><a href="#" class="disabled">All Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../RESUME.pdf" target="_blank">Resume</a></li>
+      <li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk</a></li>
     </ul>
   </div>
 </nav>
@@ -2995,6 +2995,7 @@ figure.output-screen .output-img-wrap img {
   transition: width 0.25s ease;
 }
 .nav-links a:hover::after { width: 100%; }
+  .nav-links a.disabled { opacity: 0.35; pointer-events: none; cursor: default; }
 
 /* Hero image — subtle parallax feel on load */
 @keyframes heroImageReveal {
