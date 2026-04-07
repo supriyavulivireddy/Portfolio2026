@@ -47,6 +47,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   transition: color 0.2s ease, transform 0.2s ease;
 }
 .nav-links a:hover { color: #111; transform: translateY(-3px); }
+  .nav-links a.disabled { opacity: 0.35; pointer-events: none; cursor: default; }
 
 .nav-links .cta a {
   background: #242424; color: #fff;
@@ -1900,26 +1901,19 @@ video:hover, iframe:hover {
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="transparent" id="navbar">
+ <nav class="transparent" id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">Supriya</a>
     <ul class="nav-links">
-      <li><a href="../index.html">All Work</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Resume</a></li>
-      <li class="cta"><a href="#">Let's talk</a></li>
-    </ul>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+      <li><a href="#" class="disabled">All Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../RESUME.pdf" target=
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="../index.html" onclick="closeMobileMenu()">All Work</a></li>
-      <li><a href="#" onclick="closeMobileMenu()">About</a></li>
-      <li><a href="#" onclick="closeMobileMenu()">Resume</a></li>
+      <li><a href="#" class="disabled" onclick="closeMobileMenu()">All Work</a></li>
+<li><a href="../about.html" onclick="closeMobileMenu()">About</a></li>
+<li><a href="../RESUME.pdf" target="_blank" onclick="closeMobileMenu()">Resume</a></li>
     </ul>
   </div>
 <div id="read-progress" style="position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#5d97c1,#9b358f);z-index:9999;transition:width 0.08s linear;pointer-events:none;"></div>
