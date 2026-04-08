@@ -392,10 +392,14 @@
     }
     .floating-cta:hover { background: #394051; transform: translateX(-50%) translateY(-2px); }
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .mobile-menu { display: block; }
+   @media (max-width: 768px) {
+      /* Mobile nav: scaled-down top nav + FAB for Let's talk */
+      .nav-inner { padding: 12px 16px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 12px; letter-spacing: 0; }
+      .nav-logo { font-size: 15px; }
+      /* Hide the "Let's talk" pill in nav on mobile — FAB handles it */
+      .nav-links .cta { display: none; }
       .floating-cta { display: block; }
       .case-study .inner { flex-direction: column; }
       .case-brief { flex: 0 0 auto; width: 100%; }
@@ -415,29 +419,20 @@
 
   <nav class="transparent" id="navbar">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">Supriya</a>
+      <a href="index.html" class="nav-logo">Supriya</a>
       <ul class="nav-links">
-        <li><a href="#">All Work</a></li>
-        <li><a href="#">About</a></li>
+        <!-- <li><a href="all-work.html">All Work</a></li> -->
+        <li><a href="about.html">About</a></li>
         <li><a href="#">Resume</a></li>
-        <li class="cta"><a href="#">Let's talk</a></li>
+        <li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#" onclick="closeMobileMenu()">All Work</a></li>
-      <li><a href="#" onclick="closeMobileMenu()">About</a></li>
-      <li><a href="#" onclick="closeMobileMenu()">Resume</a></li>
-    </ul>
-  </div>
 
-  <a href="#" class="floating-cta">Let's talk ☕</a>
 
+<a href="mailto:supriyavulivireddy@gmail.com" class="floating-cta">Let's talk ☕</a>
+  
   <section class="hero" id="hero">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
@@ -545,17 +540,7 @@
       }, { passive: true });
     })();
 
-    // ── HAMBURGER ──
-    var hamburger = document.getElementById('hamburger');
-    var mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', function() {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-    function closeMobileMenu() {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    }
+
 
     // ── HERO ANIMATE ON LOAD ──
     window.addEventListener('load', function() {
