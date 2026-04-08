@@ -86,7 +86,6 @@
       font-weight: 400;
     }
     .nav-links a:hover { color: var(--accent); }
-    .nav-links a.disabled { opacity: 0.35; pointer-events: none; cursor: default; }
     .chapter-nav-wrap {
       position: fixed;
       top: 81px;
@@ -1787,14 +1786,14 @@
 </head>
 <body>
 <div id="read-progress" style="position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#0034b3,#9b358f);z-index:9999;transition:width 0.08s linear;pointer-events:none;"></div>
-<nav class="transparent" id="navbar">
-  <a href="../index.html" class="nav-logo">Supriya</a>
-  <ul class="nav-links">
-    <li><a href="#" class="disabled">All Work</a></li>
-    <li><a href="../about.html">About</a></li>
-    <li><a href="../RESUME.pdf" target="_blank">Resume</a></li>
-    <li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk</a></li>
-  </ul>
+<nav>
+<a class="nav-logo" href="../index.html">Supriya</a>
+<ul class="nav-links">
+<li><a href="index.html">All Work</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Resume</a></li>
+<li><a href="#">Let's talk</a></li>
+</ul>
 </nav>
 <div class="chapter-nav-wrap" id="chapterNavWrap">
 <div class="chapter-nav" id="chapterNav">
