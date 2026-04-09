@@ -1207,10 +1207,32 @@
       .an-block,.qs-block,.cm-block { padding-left: 80px; padding-right: 80px; }
       .an-h3,.qs-h3,.cm-h3 { font-size: 52px; }
     }
+/* FAB — floating "Let's talk" button, shown only on mobile */
+    .floating-cta {
+      display: none;
+      position: fixed;
+      bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      background: #242424; color: #fff;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-family: 'Figtree', sans-serif;
+      font-size: 15px; font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      transition: background 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+    .floating-cta:hover { background: #394051; transform: translateX(-50%) translateY(-2px); }
+
     @media (max-width: 768px) {
       nav { padding: 16px 20px; }
       .nav-links { gap: 16px; }
       .nav-links a { font-size: 14px; }
+      .nav-links .cta { display: none; }
+      .floating-cta { display: block; }
     }
     @media (max-width: 480px) {
       nav {
@@ -1789,12 +1811,14 @@
 <nav>
 <a class="nav-logo" href="../index.html">Supriya</a>
 <ul class="nav-links">
-<li><a href="index.html">All Work</a></li>
-<li><a href="#">About</a></li>
+<!-- <li><a href="../all-work.html">All Work</a></li> -->
+<li><a href="../about.html">About</a></li>
 <li><a href="#">Resume</a></li>
-<li><a href="#">Let's talk</a></li>
+<li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk</a></li>
 </ul>
 </nav>
+
+<a href="mailto:supriyavulivireddy@gmail.com" class="floating-cta">Let's talk ☕</a>
 <div class="chapter-nav-wrap" id="chapterNavWrap">
 <div class="chapter-nav" id="chapterNav">
 <a class="chapter-nav-item active" data-target="fs-outer" href="#fs-outer">
@@ -3957,16 +3981,16 @@
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;">
 <p style="font-family:Figtree,sans-serif;font-size:clamp(18px,2vw,24px);font-weight:500;color:#ffffff;line-height:1.5;margin:0;">Supriya Vulivireddy</p>
-<a href="/cdn-cgi/l/email-protection#a5d6d0d5d7ccdcc48bd3d0c9ccd3ccd7c0c1c1dce5c2c8c4ccc98bc6cac8" style="display:flex;align-items:center;gap:6px;text-decoration:none;">
-<svg fill="none" height="18" stroke="rgba(255,255,255,0.5)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="18"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-<span style="font-family:Figtree,sans-serif;font-size:clamp(13px,1.3vw,16px);font-weight:400;color:rgba(255,255,255,0.55);"><span class="__cf_email__" data-cfemail="3f4c4a4f4d56465e11494a535649564d5a5b5b467f58525e5653115c5052">[email protected]</span></span>
-</a>
+<a href="mailto:supriyavulivireddy@gmail.com" class="reflection-handle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              supriyavulivireddy@gmail.com
+            </a>
 <div style="display:flex;align-items:center;gap:16px;">
 <a href="https://www.linkedin.com/in/supriya2709/" style="display:flex;align-items:center;gap:6px;text-decoration:none;" target="_blank">
 <svg fill="rgba(255,255,255,0.5)" height="18" viewbox="0 0 24 24" width="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 <span style="font-family:Figtree,sans-serif;font-size:clamp(13px,1.3vw,16px);font-weight:400;color:rgba(255,255,255,0.55);">LinkedIn</span>
 </a>
-<a href="https://www.behance.net/supriyavulivireddy" style="display:flex;align-items:center;gap:6px;text-decoration:none;" target="_blank">
+<a href="https://www.behance.net/supriya27" style="display:flex;align-items:center;gap:6px;text-decoration:none;" target="_blank">
 <svg fill="rgba(255,255,255,0.5)" height="18" viewbox="0 0 24 24" width="18"><path d="M1.5 1.5h6.75c3 0 5.25 1.5 5.25 4.5 0 1.5-.75 2.75-2 3.5 1.75.75 2.75 2.25 2.75 4 0 3.25-2.5 4.5-5.75 4.5H1.5V1.5zm3 5.5h3.25c1.25 0 2-.5 2-1.75S8.75 3.5 7.75 3.5H4.5V7zm0 7.5h3.5c1.5 0 2.25-.75 2.25-2s-.75-2-2.25-2H4.5v4zM15 7.5h7v1.75h-7V7.5zm.75 4c0-2.75 2-4.75 4.75-4.75 2.5 0 4.5 1.75 4.5 4.5v.75H18.5c.25 1.25 1 2 2.25 2 .75 0 1.5-.25 1.75-1h2.75c-.5 2-2.25 3-4.5 3-2.75 0-5-2-5-4.5zm2.75-1h4c-.25-1.25-1-1.75-2-1.75s-1.75.5-2 1.75z"></path></svg>
 <span style="font-family:Figtree,sans-serif;font-size:clamp(13px,1.3vw,16px);font-weight:400;color:rgba(255,255,255,0.55);">Behance</span>
 </a>
