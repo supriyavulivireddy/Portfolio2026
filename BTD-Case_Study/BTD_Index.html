@@ -61,13 +61,34 @@ nav { transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.
   display: flex; justify-content: space-between; align-items: center;
 }
 
+/* FAB — floating "Let's talk" button, shown only on mobile */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  background: #242424; color: #fff;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-family: 'Figtree', sans-serif;
+  font-size: 15px; font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  transition: background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+.floating-cta:hover { background: #394051; transform: translateX(-50%) translateY(-2px); }
+
 /* Mobile nav: scale links down, always visible — no hamburger */
 @media (max-width: 768px) {
   .nav-inner { padding: 12px 16px; }
   .nav-links { gap: 10px; }
   .nav-links a { font-size: 12px; letter-spacing: 0; }
-  .nav-links .cta a { padding: 6px 12px; font-size: 11px; }
+  .nav-links .cta { display: none; }
   .nav-logo { font-size: 15px; }
+  .floating-cta { display: block; }
 }
 
 /* ── CHAPTER NAV ── */
@@ -1470,13 +1491,15 @@ body {
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">Supriya</a>
     <ul class="nav-links">
-      <li><a href="../index.html">All Work</a></li>
-      <li><a href="#">About</a></li>
+      <!-- <li><a href="../all-work.html">All Work</a></li> -->
+      <li><a href="../about.html">About</a></li>
       <li><a href="#">Resume</a></li>
-      <li class="cta"><a href="#">Let's talk</a></li>
+      <li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk</a></li>
     </ul>
   </div>
 </nav>
+
+<a href="mailto:supriyavulivireddy@gmail.com" class="floating-cta">Let's talk ☕</a>
 
 <!-- ── CHAPTER NAV ── -->
 <div class="chapter-nav-wrap" id="chapterNavWrap">
@@ -2316,15 +2339,15 @@ body {
         <div class="reflection-author-info">
           <p class="reflection-author-name">Supriya Vulivireddy</p>
           <div class="reflection-author-handles">
-            <a href="/cdn-cgi/l/email-protection#36454346445f4f5740435a5f405f445352524f76515b575f5a1855595b" class="reflection-handle">
+            <a href="mailto:supriyavulivireddy@gmail.com" class="reflection-handle">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span class="__cf_email__" data-cfemail="24575154564d5d455251484d524d564140405d644349454d480a474b49">[email&#160;protected]</span>
+              supriyavulivireddy@gmail.com
             </a>
             <a href="https://www.linkedin.com/in/supriya2709/" class="reflection-handle" target="_blank" rel="noopener noreferrer">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
             </a>
-            <a href="https://www.behance.net/supriyavulivireddy" class="reflection-handle" target="_blank" rel="noopener noreferrer">
+<a href="https://www.behance.net/supriya27" class="reflection-handle" target="_blank" rel="noopener noreferrer">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.483 1.953 1.252 2.312.459.214.945.287 1.451.287.539 0 1.139-.254 1.486-.71zm-6.765-4.5h3.765c-.052-1.181-.44-1.862-1.816-1.862-1.269 0-1.821.679-1.949 1.862zm-12.66 6.44H1V5.498h3.818c4.958 0 4.208 5.58 1.589 6.524 3.104.731 4.261 7.418-2.106 7.418zm-.382-10.83H3.386v2.853h1.237c1.564 0 1.643-2.853 0-2.853zm.001 5.107H3.386v3.107h1.478c2.018 0 1.979-3.107 0-3.107z"/></svg>
               Behance
             </a>
