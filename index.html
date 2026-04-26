@@ -422,6 +422,82 @@
       .read-btn:hover { background: #242424; color: #fff; }
       footer p { white-space: normal !important; line-height: 1.6; font-size: 13px; }
     }
+
+    /* ── EARLIER PROJECTS ── */
+    .earlier-section {
+      background: #f9fafb;
+      padding: clamp(48px, 5vw, 80px) 0;
+    }
+    .earlier-inner {
+      max-width: 1512px;
+      margin: 0 auto;
+      padding-left: clamp(16px, 3vw, 40px);
+      padding-right: clamp(16px, 3vw, 40px);
+    }
+    .earlier-heading {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 600;
+      color: #394051;
+      margin-bottom: 6px;
+    }
+    .earlier-period {
+      font-size: clamp(12px, 1.1vw, 14px);
+      color: #717d98;
+      margin-bottom: clamp(24px, 3vw, 40px);
+    }
+    .earlier-grid {
+      display: flex;
+      gap: clamp(16px, 2vw, 24px);
+      flex-wrap: wrap;
+    }
+    .earlier-card {
+      flex: 1;
+      min-width: 260px;
+      background: #fff;
+      border: 1px solid #e8ecf2;
+      border-radius: 12px;
+      padding: clamp(20px, 2vw, 28px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .earlier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-color: #c4d4f0;
+    }
+    .earlier-card-title {
+      font-size: clamp(14px, 1.3vw, 16px);
+      font-weight: 600;
+      color: #394051;
+      line-height: 1.4;
+    }
+    .earlier-card-desc {
+      font-size: clamp(12px, 1.1vw, 13px);
+      color: #717d98;
+      line-height: 1.5;
+    }
+    .earlier-card-link {
+      font-size: clamp(12px, 1vw, 13px);
+      font-weight: 500;
+      color: #4060b8;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+    }
+    .earlier-card:hover .earlier-card-link { text-decoration: underline; }
+    .earlier-card:hover .earlier-card-link .arrow { transform: translateX(3px); }
+    .earlier-card-link .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    @media (max-width: 768px) {
+      .earlier-grid { flex-direction: column; }
+      .earlier-card { min-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -561,6 +637,31 @@
       </div>
       <div class="case-image-holder reveal reveal-d2">
         <img class="case-image" src="Images/thumbnail-giftcrypto.jpg" alt="Gift a Crypto" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EARLIER PROJECTS ── -->
+  <div class="earlier-section">
+    <div class="earlier-inner">
+      <h2 class="earlier-heading reveal">Earlier Projects</h2>
+      <p class="earlier-period reveal">2022 - 2023 at Mudrex</p>
+      <div class="earlier-grid">
+        <a href="https://supriyavulivireddy.wixsite.com/website/ui-revamp" target="_blank" rel="noopener" class="earlier-card reveal reveal-d1">
+          <p class="earlier-card-title">Mudrex UI Revamp and Design System</p>
+          <p class="earlier-card-desc">Defined the visual identity for the app across colour, typography, illustration, and micro-interactions. Led the creation of a design system that became the foundation across platforms.</p>
+          <span class="earlier-card-link">View project <span class="arrow">→</span></span>
+        </a>
+        <a href="https://supriyavulivireddy.wixsite.com/website/quiz-case-study" target="_blank" rel="noopener" class="earlier-card reveal reveal-d2">
+          <p class="earlier-card-title">Quiz Feature for User Engagement</p>
+          <p class="earlier-card-desc">Designed a quiz feature to boost engagement by mapping user journeys, identifying intervention points, and anticipating design challenges before exploring solutions.</p>
+          <span class="earlier-card-link">View project <span class="arrow">→</span></span>
+        </a>
+        <a href="https://supriyavulivireddy.wixsite.com/website/journey-to-insight" target="_blank" rel="noopener" class="earlier-card reveal reveal-d3">
+          <p class="earlier-card-title">Journey to Insight</p>
+          <p class="earlier-card-desc">A strategic UX exercise mapping user expectations across lifecycle stages to identify where and how to improve the product experience at scale.</p>
+          <span class="earlier-card-link">View project <span class="arrow">→</span></span>
+        </a>
       </div>
     </div>
   </div>
