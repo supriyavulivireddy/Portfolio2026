@@ -32,6 +32,149 @@ nav.nav-hidden { transform: translateY(-100%); }
 .mobile-menu.open { transform: translateY(0); }
 .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 24px; }
 .mobile-menu ul a { font-size: 22px; font-weight: 500; color: #242424; text-decoration: none; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.05s; }
+.reveal-d2 { transition-delay: 0.12s; }
+.reveal-d3 { transition-delay: 0.2s; }
+.reveal-d4 { transition-delay: 0.28s; }
+.reveal-d5 { transition-delay: 0.36s; }
+
+/* Slide from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+/* Slide from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Scale up */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Hero entrance */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-animate.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MICRO-INTERACTIONS ── */
+
+/* Outcome cards — lift on hover */
+.outcome-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.outcome-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Goal cards — lift + subtle scale */
+.goal-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.goal-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Tenet cards — lift */
+.tenet-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tenet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+
+/* Quote cards — subtle lift */
+.quote-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.quote-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Iteration screens — scale on hover */
+.iter-screen {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.iter-screen:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Delight images — subtle zoom */
+.delight-img img {
+  transition: transform 0.4s ease;
+}
+.delight-img:hover img {
+  transform: scale(1.02);
+}
+
+/* Hero mockups — float on hover */
+.hero-mockup {
+  transition: transform 0.4s ease;
+}
+.hero-mockup:hover {
+  transform: translateY(-8px);
+}
+
+/* Pills — lift */
+.pill, .tenet-pill {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: default;
+}
+.pill:hover, .tenet-pill:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* Parallel items — slide in on hover */
+.parallel-item {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.parallel-item:hover {
+  transform: translateX(4px);
+}
+
+/* Reflect blocks — subtle lift */
+.reflect-block {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.reflect-block:hover {
+  transform: translateY(-3px);
+}
+
+/* Iter label — color pulse */
+.iter-label {
+  transition: letter-spacing 0.3s ease;
+}
+.iter-header-wrap:hover .iter-label {
+  letter-spacing: 0.08em;
+}
+
 .floating-cta {
   display: none;
   position: fixed;
@@ -50,7 +193,150 @@ nav.nav-hidden { transform: translateY(-100%); }
   white-space: nowrap;
 }
 .floating-cta:hover { background: #394051; transform: translateX(-50%) translateY(-2px); }
-@media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .mobile-menu { display: block; } .nav-links .cta { display: none; } .floating-cta { display: block; } .nav-logo { font-size: 15px; } }
+@media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .mobile-menu { display: block; } .nav-links .cta { display: none; } 
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.05s; }
+.reveal-d2 { transition-delay: 0.12s; }
+.reveal-d3 { transition-delay: 0.2s; }
+.reveal-d4 { transition-delay: 0.28s; }
+.reveal-d5 { transition-delay: 0.36s; }
+
+/* Slide from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+/* Slide from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Scale up */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Hero entrance */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-animate.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MICRO-INTERACTIONS ── */
+
+/* Outcome cards — lift on hover */
+.outcome-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.outcome-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Goal cards — lift + subtle scale */
+.goal-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.goal-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Tenet cards — lift */
+.tenet-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tenet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+
+/* Quote cards — subtle lift */
+.quote-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.quote-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Iteration screens — scale on hover */
+.iter-screen {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.iter-screen:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Delight images — subtle zoom */
+.delight-img img {
+  transition: transform 0.4s ease;
+}
+.delight-img:hover img {
+  transform: scale(1.02);
+}
+
+/* Hero mockups — float on hover */
+.hero-mockup {
+  transition: transform 0.4s ease;
+}
+.hero-mockup:hover {
+  transform: translateY(-8px);
+}
+
+/* Pills — lift */
+.pill, .tenet-pill {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: default;
+}
+.pill:hover, .tenet-pill:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* Parallel items — slide in on hover */
+.parallel-item {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.parallel-item:hover {
+  transform: translateX(4px);
+}
+
+/* Reflect blocks — subtle lift */
+.reflect-block {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.reflect-block:hover {
+  transform: translateY(-3px);
+}
+
+/* Iter label — color pulse */
+.iter-label {
+  transition: letter-spacing 0.3s ease;
+}
+.iter-header-wrap:hover .iter-label {
+  letter-spacing: 0.08em;
+}
+
+.floating-cta { display: block; } .nav-logo { font-size: 15px; } }
 @media (max-width: 480px) { .nav-logo { font-size: 13px; } }
 
 /* ── CHAPTER NAV ── */
@@ -444,9 +730,9 @@ nav.nav-hidden { transform: translateY(-100%); }
   <div class="hero-header">
     <img src="images/mudrex-logo.png" alt="Mudrex" class="hero-logo" onerror="this.style.display='none'">
     <div class="hero-titles">
-      <p class="hero-eyebrow">What separates a transaction from a gesture?</p>
-      <h1 class="hero-title">Gift cards feel like obligations.<br>What would it take to make one feel <strong>handpicked</strong>?</h1>
-      <div class="hero-pills">
+      <p class="hero-eyebrow hero-animate reveal-d1">What separates a transaction from a gesture?</p>
+      <h1 class="hero-title hero-animate reveal-d2">Gift cards feel like obligations.<br>What would it take to make one feel <strong>handpicked</strong>?</h1>
+      <div class="hero-pills hero-animate reveal-d3">
         <span class="pill pill-green">Product Thinking</span>
         <span class="pill pill-blue">Emotion by Design</span>
         <span class="pill pill-blue">Secondary Research</span>
@@ -455,7 +741,7 @@ nav.nav-hidden { transform: translateY(-100%); }
       </div>
     </div>
   </div>
-  <div class="hero-mockups">
+  <div class="hero-mockups hero-animate reveal-d4">
     <div class="hero-mockup"><img src="images/hero-screen1.png" alt="" onerror="this.style.background='#e8edf8';this.style.minHeight='560px';"></div>
     <div class="hero-mockup"><img src="images/hero-screen2.png" alt="" onerror="this.style.background='#e8edf8';this.style.minHeight='560px';"></div>
     <div class="hero-mockup"><img src="images/hero-screen3.png" alt="" onerror="this.style.background='#e8edf8';this.style.minHeight='560px';"></div>
@@ -464,10 +750,11 @@ nav.nav-hidden { transform: translateY(-100%); }
 
 <!-- DEETS -->
 <div class="section" id="overview-content">
+<!-- reveal wrappers added via JS -->
   <div class="brief-intro">
     <p><strong>Mudrex</strong> is one of India's leading crypto investment platforms with <strong>2M+ users and 400K monthly active investors</strong>, built around a simple idea: that the complexity behind crypto should not be the investor's problem. The platform serves a broad range of users, with <strong>a strong focus on retail investors</strong> who are used to straightforward, <strong>predictable investment products.</strong></p>
   </div>
-  <div class="context-row">
+  <div class="context-row reveal reveal-d1">
     <div class="row-label">Context</div>
     <div class="row-body">
       <p>The product team saw gifting as a growth lever: bring in new users through existing ones, give the marketing team a mechanism for seasonal campaigns, and create a reason for people to talk about Mudrex outside the investing context.</p>
@@ -477,32 +764,32 @@ nav.nav-hidden { transform: translateY(-100%); }
       </div>
     </div>
   </div>
-  <div class="context-row">
+  <div class="context-row reveal reveal-d2">
     <div class="row-label">My Role</div>
     <div class="row-body">
       <p><strong>Lead Product Designer. End-to-end ownership from framework through visual execution, including the physical gift card exploration</strong>. Worked alongside product management and marketing teams in a focused 1.5-week sprint driven by a fixed marketing campaign deadline.</p>
     </div>
   </div>
-  <div class="context-row" style="padding-bottom: 100px;">
+  <div class="context-row reveal reveal-d3" style="padding-bottom: 100px;">
     <div class="row-label">Outcomes</div>
     <div class="row-body">
       <div class="outcome-cards">
         <div class="outcome-row">
-          <div class="outcome-card">
+          <div class="outcome-card reveal-scale">
             <div class="outcome-num">1500+</div>
             <div class="outcome-desc">Users who sent gifts before Diwali, a marketing campaign launched for one of India's biggest festivals</div>
           </div>
-          <div class="outcome-card">
+          <div class="outcome-card reveal-scale">
             <div class="outcome-num">&#x20B9; 3,00,000+</div>
             <div class="outcome-desc">Total value of gifts shared through the platform</div>
           </div>
         </div>
         <div class="outcome-row">
-          <div class="outcome-card">
+          <div class="outcome-card reveal-scale">
             <div class="outcome-num">2,000+</div>
             <div class="outcome-desc">New users onboarded through the gifting channel alone in less than 60 days</div>
           </div>
-          <div class="outcome-card">
+          <div class="outcome-card reveal-scale">
             <div class="outcome-num">Felt Special</div>
             <div class="outcome-desc">Common response by users who tried the gifting flow on Mudrex</div>
           </div>
@@ -516,21 +803,21 @@ nav.nav-hidden { transform: translateY(-100%); }
 <!-- CH1: BRIEF VS CHALLENGE            -->
 <!-- ═══════════════════════════════════ -->
 <section class="ch1-wrap" id="ch-problem">
-  <div class="ch1-title-wrap"><h2 class="ch1-title">Brief vs Challenge</h2></div>
+  <div class="ch1-title-wrap reveal"><h2 class="ch1-title">Brief vs Challenge</h2></div>
 
   <!-- Goal cards with SVG icons -->
   <div class="goal-cards">
-    <div class="goal-card">
+    <div class="goal-card reveal-left reveal-d1">
       <img class="goal-card-icon" src="images/icon-product-goal.png" alt="" onerror="this.style.background='#D5DBFF';this.style.borderRadius='8px';">
       <div class="goal-card-title">Product Goal</div>
       <div class="goal-card-body">Let users send and receive crypto tokens as gifts within the Mudrex app</div>
     </div>
-    <div class="goal-card">
+    <div class="goal-card reveal reveal-d2">
       <img class="goal-card-icon" src="images/icon-business-goal.png" alt="" onerror="this.style.background='#FFE5B4';this.style.borderRadius='8px';">
       <div class="goal-card-title">Business Goal</div>
       <div class="goal-card-body">Drive user acquisition through existing users and power seasonal marketing campaigns</div>
     </div>
-    <div class="goal-card">
+    <div class="goal-card reveal-right reveal-d3">
       <img class="goal-card-icon" src="images/icon-design-goal.png" alt="" onerror="this.style.background='#FFD5D5';this.style.borderRadius='8px';">
       <div class="goal-card-title">Design Goal</div>
       <div class="goal-card-body">Turn a transactional feature into an experience worth remembering. Make both giving and receiving feel personal.</div>
@@ -538,7 +825,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   </div>
 
   <!-- Sec 2: Text + rotated quotes, bottom aligned -->
-  <div class="sec2-wrap">
+  <div class="sec2-wrap reveal">
     <h3 class="sec2-title">Everyone solved the transaction.<br>Nobody solved the gift.</h3>
     <div class="sec2-content">
       <div class="sec2-text">
@@ -547,16 +834,16 @@ nav.nav-hidden { transform: translateY(-100%); }
         <p>When I spoke to colleagues across the office, people who regularly give and receive gift cards on other platforms, the same sentiment kept surfacing: they would not mind using gift cards more often if they stopped feeling like an obligation rather than a thoughtful gift.</p>
       </div>
       <div class="quote-stack">
-        <div class="quote-card"><p>I have sent so many gift cards but honestly, it always feels like I am taking a shortcut. Like I could not be bothered to pick something real.</p></div>
-        <div class="quote-card"><p>When I get a gift card, I use it. But I do not remember it. There is nothing to remember. It is just money with a theme on it.</p></div>
-        <div class="quote-card"><p>I would use gift cards way more if they did not feel like an obligation. Like, if it actually felt like someone put thought into it? That would change everything.</p></div>
-        <div class="quote-card"><p>It is the wrapper and the note that makes a gift feel real. Not the thing inside. Digital gift cards skip all of that.</p></div>
+        <div class="quote-card reveal reveal-d1"><p>I have sent so many gift cards but honestly, it always feels like I am taking a shortcut. Like I could not be bothered to pick something real.</p></div>
+        <div class="quote-card reveal reveal-d2"><p>When I get a gift card, I use it. But I do not remember it. There is nothing to remember. It is just money with a theme on it.</p></div>
+        <div class="quote-card reveal reveal-d3"><p>I would use gift cards way more if they did not feel like an obligation. Like, if it actually felt like someone put thought into it? That would change everything.</p></div>
+        <div class="quote-card reveal reveal-d4"><p>It is the wrapper and the note that makes a gift feel real. Not the thing inside. Digital gift cards skip all of that.</p></div>
       </div>
     </div>
   </div>
 
   <!-- Sec 3: Physical vs Digital -->
-  <div class="sec3-wrap">
+  <div class="sec3-wrap reveal">
     <h3 class="sec3-title">What gets lost in translation</h3>
     <div class="sec3-inner">
       <div class="parallels-scroll-outer"><div class="parallels-row">
@@ -578,7 +865,7 @@ nav.nav-hidden { transform: translateY(-100%); }
           <div class="parallel-item"><div class="parallel-dot-digital"></div><span class="parallel-text">Nothing to unwrap</span></div>
         </div>
       </div></div>
-      <div class="annotation-wrap">
+      <div class="annotation-wrap reveal">
         <div class="curly-brace">
           <svg viewBox="0 0 60 332" fill="none"><path d="M10 4C10 4 50 40 50 80C50 120 10 140 10 166C10 192 50 212 50 252C50 292 10 328 10 328" stroke="#394051" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
         </div>
@@ -588,20 +875,20 @@ nav.nav-hidden { transform: translateY(-100%); }
   </div>
 
   <!-- Sec 4: Gap cards -->
-  <div class="sec4-wrap">
+  <div class="sec4-wrap reveal">
     <h3 class="sec4-title">Gap was not in the flow.<br>It was in the feeling.</h3>
     <div class="tenet-scroll-outer"><div class="tenet-cards">
-      <div class="tenet-card">
+      <div class="tenet-card reveal-left reveal-d1">
         <div class="tenet-card-header"><div class="tenet-card-emoji">🎁</div><div class="tenet-card-name">For the Sender</div></div>
         <div class="tenet-card-body">The act of giving should feel like crafting something personal, not filling out a form</div>
         <div class="tenet-pills"><span class="tenet-pill">Effort</span><span class="tenet-pill">Authorship</span><span class="tenet-pill">Craft</span></div>
       </div>
-      <div class="tenet-card">
+      <div class="tenet-card reveal reveal-d2">
         <div class="tenet-card-header"><div class="tenet-card-emoji">✨</div><div class="tenet-card-name">For the Receiver</div></div>
         <div class="tenet-card-body">The moment of receiving should feel like unwrapping something made for you, not opening another notification</div>
         <div class="tenet-pills"><span class="tenet-pill">Surprise</span><span class="tenet-pill">Personalisation</span><span class="tenet-pill">Delight</span></div>
       </div>
-      <div class="tenet-card">
+      <div class="tenet-card reveal-right reveal-d3">
         <div class="tenet-card-header"><div class="tenet-card-emoji">📣</div><div class="tenet-card-name">For the Business</div></div>
         <div class="tenet-card-body">A gift that feels special gets talked about. The experience itself becomes the acquisition channel.</div>
         <div class="tenet-pills"><span class="tenet-pill">Advocacy</span><span class="tenet-pill">Retention</span><span class="tenet-pill">Distribution</span></div>
@@ -620,11 +907,11 @@ nav.nav-hidden { transform: translateY(-100%); }
 <!-- CH2: MAPPING THE EMOTIONAL ARC     -->
 <!-- ═══════════════════════════════════ -->
 <section class="ch2-wrap" id="ch-framework">
-  <div class="ch2-title-wrap"><h2 class="ch2-title">Mapping the<br>Emotional Arc</h2></div>
+  <div class="ch2-title-wrap reveal"><h2 class="ch2-title">Mapping the<br>Emotional Arc</h2></div>
   <div class="ch2-intro">
     <p>Before designing any screens, I mapped out the complete journey for both existing and new users, tracking what they think and feel at every stage. This was not a standard user flow. It was an emotional journey map that would guide every design decision that followed.</p>
   </div>
-  <div class="ch2-image-wrap">
+  <div class="ch2-image-wrap reveal-scale">
     <img src="images/emotional-arc-flow.png" alt="User flow and emotional journey map showing both existing and new user paths through the gifting experience" onerror="this.style.background='#f0f2ff';this.style.minHeight='500px';this.style.width='100%';this.style.borderRadius='8px';">
   </div>
 </section>
@@ -632,22 +919,22 @@ nav.nav-hidden { transform: translateY(-100%); }
 <!-- CH3–6 PLACEHOLDERS -->
 <section class="chapter-section light-bg" id="ch-iterations">
 
-  <div class="ch-title-wrap">
+  <div class="ch-title-wrap reveal">
     <h2 class="ch-title ch-title-dark">Earning the<br>Experience</h2>
   </div>
 
-  <div class="ch-intro-wrap">
+  <div class="ch-intro-wrap reveal">
     <p class="ch-intro-text">With a marketing campaign deadline driving the timeline, shipping everything at once was not an option. So the work was structured in three deliberate passes. Each one building on the trust and buy-in earned by the previous one.</p>
   </div>
 
   <!-- Iteration 1 -->
-  <div class="iter-header-wrap">
+  <div class="iter-header-wrap reveal">
     <p class="iter-label">Iteration 1</p>
     <p class="iter-title">Get the bones right</p>
     <p class="iter-body">The first pass was about getting the information architecture right. Where does a user first encounter the gifting option? What are the entry points across the app? And once they are in the flow, what is the minimum viable path from selecting a token to sending it? These wireframes covered the structure, not the emotion. The goal was to prove the feature works before arguing for what would make it feel special.</p>
   </div>
 
-  <div class="iter-screens-wrap">
+  <div class="iter-screens-wrap reveal">
     <p class="iter-screens-label">Entry points to introduce Gift a Crypto</p>
     <div class="iter-screens-row">
       <img src="images/iter1-screen1.png" alt="" class="iter-screen" onerror="this.style.background='#e8edf8';">
@@ -662,13 +949,13 @@ nav.nav-hidden { transform: translateY(-100%); }
   <div class="iter-divider"></div>
 
   <!-- Iteration 2 -->
-  <div class="iter-header-wrap">
+  <div class="iter-header-wrap reveal">
     <p class="iter-label">Iteration 2</p>
     <p class="iter-title">Make the case for richness</p>
     <p class="iter-body">With the foundation proven, I went back to the same screens and layered in the elements that would elevate the experience. Live preview so users see their gift take shape as they build it. Personalised templates with meaning. The ability to add a message that feels written, not typed. This pass was about showing stakeholders what the feature could become, and making the case that the emotional layer was worth the engineering cost.</p>
   </div>
 
-  <div class="iter-screens-wrap">
+  <div class="iter-screens-wrap reveal">
     <p class="iter-screens-label">Gifting flow with personalisation elements</p>
     <div class="iter-screens-row">
       <img src="images/iter2-screen1.png" alt="" class="iter-screen" onerror="this.style.background='#e8edf8';">
@@ -683,7 +970,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   <div class="iter-divider"></div>
 
   <!-- Iteration 3 -->
-  <div class="iter-header-wrap">
+  <div class="iter-header-wrap reveal">
     <p class="iter-label">Iteration 3</p>
     <p class="iter-title">Bring it together</p>
     <p class="iter-body">With buy-in secured, the third iteration unified everything into one cohesive wireframe set. The non-linear layout where users see their card come alive as they make choices. The flip interaction, the adaptive preview, the gift-wrapping moment. Every element from the first two passes now worked as a single, continuous experience. Still wireframes at this stage, but the thinking was complete.</p>
@@ -730,11 +1017,11 @@ nav.nav-hidden { transform: translateY(-100%); }
     }
   </style>
 
-  <div class="delight-title-wrap">
+  <div class="delight-title-wrap reveal">
     <h2 class="delight-title">Adding Delight</h2>
   </div>
 
-  <div class="delight-row">
+  <div class="delight-row reveal-left">
     <div class="delight-img">
       <img src="images/delight-live-preview.png" alt="Live preview" onerror="this.style.background='rgba(255,255,255,0.05)';this.style.minHeight='500px';this.style.border='1px solid rgba(255,255,255,0.08)';this.style.borderRadius='12px';">
     </div>
@@ -744,7 +1031,7 @@ nav.nav-hidden { transform: translateY(-100%); }
     </div>
   </div>
 
-  <div class="delight-row">
+  <div class="delight-row reveal-right">
     <div class="delight-img">
       <img src="images/delight-templates.png" alt="Template designs" onerror="this.style.background='rgba(255,255,255,0.05)';this.style.minHeight='500px';this.style.border='1px solid rgba(255,255,255,0.08)';this.style.borderRadius='12px';">
     </div>
@@ -754,7 +1041,7 @@ nav.nav-hidden { transform: translateY(-100%); }
     </div>
   </div>
 
-  <div class="delight-row">
+  <div class="delight-row reveal-left">
     <div class="delight-img">
       <img src="images/delight-flip.png" alt="Card flip" onerror="this.style.background='rgba(255,255,255,0.05)';this.style.minHeight='500px';this.style.border='1px solid rgba(255,255,255,0.08)';this.style.borderRadius='12px';">
     </div>
@@ -764,7 +1051,7 @@ nav.nav-hidden { transform: translateY(-100%); }
     </div>
   </div>
 
-  <div class="delight-row">
+  <div class="delight-row reveal-right">
     <div class="delight-img">
       <video class="delight-video" src="images/delight-unwrap.mp4" autoplay loop muted playsinline></video>
     </div>
@@ -791,10 +1078,10 @@ nav.nav-hidden { transform: translateY(-100%); }
 <!-- THE EXPERIENCE, OFF SCREEN -->
 <section class="chapter-section light-bg" id="ch-physical">
 
-  <div class="ch-title-wrap">
+  <div class="ch-title-wrap reveal">
     <h2 class="ch-title ch-title-dark">The Experience,<br>Off Screen</h2>
   </div>
-  <div class="ch-intro-wrap">
+  <div class="ch-intro-wrap reveal">
     <p class="ch-intro-text">The gifting experience did not have to end at the screen. If the goal was to make a digital gift feel as real as a physical one, why not explore what happens when it actually becomes physical? This was not part of the original brief. It came from a conversation with stakeholders after the digital experience was locked.</p>
   </div>
 
@@ -805,7 +1092,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   </div>
 
   <!-- Thought process -->
-  <div class="context-row" style="background: #f7faff; padding-bottom: 120px;">
+  <div class="context-row reveal reveal-d4" style="background: #f7faff; padding-bottom: 120px;">
     <div class="row-label">Design thinking</div>
     <div class="row-body">
       <p>The card had to feel worth keeping. Thick card stock, embossing, and metallic edges on plastic to mimic the weight of metal.</p>
@@ -854,15 +1141,15 @@ nav.nav-hidden { transform: translateY(-100%); }
 
   <div class="reflect-layout">
     <div class="reflect-left">
-      <div class="reflect-block">
+      <div class="reflect-block reveal">
         <p class="reflect-block-label">On Constraints:</p>
         <p class="reflect-block-body">A 1.5-week deadline forced clarity. There was no room for ambiguity about what mattered. The tight sprint made me structure the work in layers, and that structure turned out to be the strategy. Each pass earned the right to the next one. Without the constraint, the work might have been broader but not sharper.</p>
       </div>
-      <div class="reflect-block">
+      <div class="reflect-block reveal">
         <p class="reflect-block-label">On Stakeholders:</p>
         <p class="reflect-block-body">The emotional layer was not a given. It was a case I had to build. Stakeholders saw a gifting feature. I saw an opportunity to design for feeling. Showing the functional version first built credibility. Then when I proposed live preview, personalised templates, and the unwrapping animation, the argument landed because the foundation was already proven.</p>
       </div>
-      <div class="reflect-block">
+      <div class="reflect-block reveal">
         <p class="reflect-block-label">On Designing for Emotion:</p>
         <p class="reflect-block-body">Emotion in fintech is not decoration. It is differentiation. In a space where every product looks and works the same, the feeling is the only thing that separates you. Users did not remember the flow. They remembered that it felt special. That is what turned receivers into senders and senders into advocates.</p>
       </div>
@@ -990,6 +1277,27 @@ nav.nav-hidden { transform: translateY(-100%); }
   if(!btn||!menu)return;
   btn.addEventListener('click',function(){btn.classList.toggle('open');menu.classList.toggle('open');});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('open');menu.classList.remove('open');});});
+})();
+
+/* ── HERO ANIMATE ON LOAD ── */
+window.addEventListener('load', function() {
+  document.querySelectorAll('.hero-animate').forEach(function(el) {
+    setTimeout(function() { el.classList.add('visible'); }, 150);
+  });
+});
+
+/* ── SCROLL REVEAL (all reveal variants) ── */
+(function() {
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { io.observe(el); });
 })();
 </script>
 </body>
