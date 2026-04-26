@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -266,7 +265,7 @@
     .pill-orange { background: #fff8ec; color: #c87e07; }
     .pill-green  { background: #ecffeb; color: #388134; }
 
-    /* Image holder — blue tint (CashFlo, Mudrex) */
+    /* Image holder -- blue tint (CashFlo, Mudrex) */
     .case-image-holder {
       flex: 1;
       background: #f2f9ff;
@@ -274,7 +273,7 @@
       padding: clamp(12px, 2vw, 24px);
       border-radius: 12px;
     }
-    /* Image holder — grey (Webless) */
+    /* Image holder -- grey (Webless) */
     .case-image-holder.grey { background: #f8f8f8; }
 
     .case-image {
@@ -289,6 +288,17 @@
     .case-image:hover {
       transform: scale(1.015);
       box-shadow: 0 8px 30px rgba(51,77,165,0.15);
+    }
+
+    /* Placeholder for case studies without a thumbnail yet */
+    .case-placeholder {
+      width: 100%; max-width: 750px;
+      aspect-ratio: 750/488;
+      background: #f0f2ff;
+      display: flex; align-items: center; justify-content: center;
+      color: #7aa3c4; font-size: 16px;
+      border-radius: 6px;
+      border: 2px dashed rgba(93,151,193,0.25);
     }
 
     .read-btn {
@@ -395,11 +405,10 @@
    @media (max-width: 768px) {
       /* Mobile nav: scaled-down top nav + FAB for Let's talk */
       .nav-inner { padding: 12px 16px; }
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: 12px; letter-spacing: 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: block; }
       .nav-logo { font-size: 15px; }
-      /* Hide the "Let's talk" pill in nav on mobile — FAB handles it */
-      .nav-links .cta { display: none; }
       .floating-cta { display: block; }
       .case-study .inner { flex-direction: column; }
       .case-brief { flex: 0 0 auto; width: 100%; }
@@ -421,18 +430,30 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Supriya</a>
       <ul class="nav-links">
-        <!-- <li><a href="all-work.html">All Work</a></li> -->
+        <li><a href="#">All Work</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Resume</a></li>
-        <li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk</a></li>
+        <li><a href="Supriya_Vulivireddy_Resume.pdf" target="_blank">Resume</a></li>
+        <li class="cta"><a href="mailto:supriyavulivireddy@gmail.com">Let's talk ☕</a></li>
       </ul>
+      <!-- Hamburger -- visible on mobile only -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile slide-down menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#" onclick="closeMobileMenu()">All Work</a></li>
+      <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="Supriya_Vulivireddy_Resume.pdf" target="_blank" onclick="closeMobileMenu()">Resume</a></li>
+    </ul>
+  </div>
 
+  <!-- Floating Let's talk pill -- mobile only -->
+  <a href="mailto:supriyavulivireddy@gmail.com" class="floating-cta">Let's talk ☕</a>
 
-<a href="mailto:supriyavulivireddy@gmail.com" class="floating-cta">Let's talk ☕</a>
-  
   <section class="hero" id="hero">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
@@ -524,6 +545,28 @@
     </div>
   </div>
 
+  <!-- ── 4. GIFT A CRYPTO ── -->
+  <div class="case-study bg-white">
+    <div class="inner">
+      <div class="case-brief reveal reveal-d1">
+        <h2 class="case-title">Gift a Crypto — Mudrex</h2>
+        <p class="case-description">Designed a crypto gifting experience that turned a transactional feature into an emotional moment. From digital flows to physical card explorations, the work proved that feeling special is a product strategy, not a decoration.</p>
+        <p class="case-role">Lead Product Designer</p>
+        <div class="pills">
+          <span class="pill pill-green">Product Thinking</span>
+          <span class="pill pill-blue">Emotion by Design</span>
+          <span class="pill pill-blue">Secondary Research</span>
+          <span class="pill pill-orange">Stakeholder Alignment</span>
+          <span class="pill pill-blue">Competitor Analysis</span>
+        </div>
+        <a href="GiftCrypto_Case-Study/GiftCrypto.html" class="read-btn">Read case study <span class="arrow">→</span></a>
+      </div>
+      <div class="case-image-holder reveal reveal-d2">
+        <div class="case-placeholder">Gift a Crypto — thumbnail coming soon</div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // ── NAV SCROLL ──
     (function() {
@@ -540,7 +583,24 @@
       }, { passive: true });
     })();
 
+    // ── HAMBURGER TOGGLE ──
+    (function() {
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('open');
+          mobileMenu.classList.toggle('open');
+        });
+      }
+    })();
 
+    function closeMobileMenu() {
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      if (hamburger) hamburger.classList.remove('open');
+      if (mobileMenu) mobileMenu.classList.remove('open');
+    }
 
     // ── HERO ANIMATE ON LOAD ──
     window.addEventListener('load', function() {
